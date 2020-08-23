@@ -181,9 +181,10 @@ type Response struct {
 	// responded to the client's NTP query.
 	Time time.Time
 
-	// ClockOffset is the estimated offset of the client clock relative to
-	// the server. Add this to the client's system clock time to obtain a
-	// more accurate time.
+	// ClockOffset is the estimated offset of the server clock relative to
+	// the client. Postive values indicate the client's clock is behind 
+	// that of the server. Add this value to the client's system clock
+	// time to obtain a more accurate time.
 	ClockOffset time.Duration
 
 	// RTT is the measured round-trip-time delay estimate between the client
